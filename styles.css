@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 15px 20px;
+    color: white;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Highlight Active Section in Navbar */
+.navbar a {
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 3px;
+    background-color: #3009f5;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;  /* Underline effect */
+}
+
+.navbar a.active {
+    color: #f15a08; /* Change color for the active section */
+}
+
+/* Move Dark Mode Toggle Button Left */
+#dark-mode-toggle {
+    margin-right: 30px; /* Adjusted margin to move left */
+}
+
+.hero {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    font-size: 20px;
+}
+
+.skills, .experience, .certificates {
+    padding: 30px;
+    background: #e8e8e8;
+    font-size: 18px;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.skills-list span {
+    background: #555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+ .experience-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .experience-item {
+    background: #555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 50%;
+}
+
+.projects, .contact {
+    padding: 30px;
+    font-size: 18px;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project, .certificate {
+    background: #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.certificate-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact {
+    padding: 30px;
+    font-size: 18px;
+    background: #e8e8e8;
+}
+
+.contact a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode .hero, .dark-mode .experience, .dark-mode .certificates {
+    background: #1e1e1e;
+}
+
+.dark-mode .project, .dark-mode .certificate {
+    background: #333;
+}
+
+.dark-mode .skills {
+    background: #1e1e1e;
+}
+
+.dark-mode .skills-list span, .dark-mode .experience-item {
+    background: #777;
+}
+
+.dark-mode .contact {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .contact a {
+    color: #6a11cb;
+}
+
+/* Navbar Links Hover Effect */
+.navbar a:hover {
+    color: #1cdb0b;
+    text-decoration: underline;
+}
+
+/* Button Hover Effect */
+.btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* Skills Hover Effect */
+.skills-list span {
+    background: #555;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.skills-list span:hover {
+    background: #6a11cb;
+    transform: scale(1.1);
+}
+
+/* Project & Certificate Hover Effects */
+.project, .certificate {
+    background: #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project:hover, .certificate:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Hover effect for Experience Section */
+.experience-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+    background: #6a11cb;
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
